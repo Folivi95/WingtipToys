@@ -79,6 +79,18 @@
             </a>  
             <br />  
         </div>
+        <div id="CategoryMenu" style="text-align: center">
+            <asp:ListView runat="server" ItemType="WingtipToys.Models.Category" SelectMethod="GetCategories" ID="CategoryList">
+                <ItemTemplate>
+                    <b style="font-size: large; font-style: normal">
+                        <a href="/ProductList.aspx?id=<%#: Item.CategoryID %>">
+                            <%#: Item.CategoryName %>
+                        </a>
+                    </b>
+                </ItemTemplate>
+                <ItemSeparatorTemplate> | </ItemSeparatorTemplate>
+            </asp:ListView>
+        </div>
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
