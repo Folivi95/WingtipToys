@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ShoppingCart.aspx.cs" Inherits="WingtipToys.ShoppingCart" %>
+﻿<%@ Page Title="Shopping Cart" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ShoppingCart.aspx.cs" Inherits="WingtipToys.ShoppingCart" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div id="ShoppingCartTitle" runat="server" class="ContentHead">
@@ -36,4 +36,14 @@
         </strong>
     </div>
     <br />
+    <table>
+        <tr>
+            <td>
+                <asp:Button ID="updateBtn" runat="server" Text="Update" OnClick="updateBtn_Click" />
+            </td>
+            <td>
+                <!--Checkout Placeholder -->
+            </td>
+        </tr>
+    </table>
 </asp:Content>
