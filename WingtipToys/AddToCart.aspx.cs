@@ -18,7 +18,7 @@ namespace WingtipToys
 
             if (!String.IsNullOrEmpty(rawId) && int.TryParse(rawId, out productId))
             {
-                using (ShoppingCartAction shoppingCart = new ShoppingCartAction())
+                using (ShoppingCartActions shoppingCart = new ShoppingCartActions())
                 {
                     shoppingCart.AddToCart(Convert.ToInt16(productId));
                 }

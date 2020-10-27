@@ -15,7 +15,7 @@ namespace WingtipToys
         protected void Page_Load(object sender, EventArgs e)
         {
             decimal cartTotal = 0;
-            using (ShoppingCartAction shoppingCartAction = new ShoppingCartAction())
+            using (ShoppingCartActions shoppingCartAction = new ShoppingCartActions())
             {
                 cartTotal = shoppingCartAction.GetTotal();
 
@@ -35,11 +35,11 @@ namespace WingtipToys
 
         public List<CartItem> UpdateCartItems()
         {
-            using (ShoppingCartAction usersShoppingCart = new ShoppingCartAction())
+            using (ShoppingCartActions usersShoppingCart = new ShoppingCartActions())
             {
                 String cartId = usersShoppingCart.GetCartId();
 
-                ShoppingCartAction.ShoppingCartUpdates[] cartUpdates = new ShoppingCartAction.ShoppingCartUpdates[CartList.Rows.Count];
+                ShoppingCartActions.ShoppingCartUpdates[] cartUpdates = new ShoppingCartActions.ShoppingCartUpdates[CartList.Rows.Count];
                 for (int i = 0; i < CartList.Rows.Count; i++)
                 {
                     IOrderedDictionary rowValues = new OrderedDictionary();
@@ -77,13 +77,13 @@ namespace WingtipToys
 
         public List<CartItem> GetShoppingCartItems()
         {
-            ShoppingCartAction action = new ShoppingCartAction();
+            ShoppingCartActions action = new ShoppingCartActions();
             return action.GetCartItems();
         }
 
         protected void updateBtn_Click(object sender, EventArgs e)
         {
-
+            UpdateCartItems();
         }
     }
 }
